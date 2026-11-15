@@ -1,0 +1,16 @@
+Approved for distribution by Ben Harwood on 2026-11-15
+
+Vibe Control licence
+
+1. Who and what. FRM SYSTEMS LTD (company number 17364736, registered in England and Wales; registered office 27 Ambleside Gardens, Wembley, HA9 8TL) ("we") let you ("you", one person) use the Vibe Control software ("the software") on these terms. By installing or running it you agree to them.
+2. Free use. You may run the software on the example project that comes with it, free, with no key.
+3. Paid use. If you have paid for a licence key, you may run the software on your own code and your employer's or clients' code that you work on, on any computer you use, for as long as these terms stand. The key is for you alone. Do not share or publish it.
+4. The source. You may read the source and change it for your own use. You may not give, sell, rent or publish the software or a changed copy of it, or remove the key check for anyone else.
+5. Ownership. We keep all rights in the software. You keep all rights in your own code and in anything the software helps you produce.
+6. Other people's tools. The software starts Claude Code, which is Anthropic's product, under your own sign-in and Anthropic's terms. We are not connected with Anthropic and do not pay for or resell Claude.
+7. "Lifetime". A paid key works with this version and any later version we release under the same name. We do not promise to release later versions.
+8. Refunds. Ask within 14 days of paying and we will refund you. Your key then stops working.
+9. No promises. The software is provided as it is. We do not promise that it is free of faults, that changes it helps make are correct, or that it protects your computer, code, accounts or data. It is not a security product. You are responsible for reviewing and testing anything before you rely on it.
+10. Limit of liability. To the extent the law allows, our total liability to you is limited to the amount you paid us for the key. Nothing here limits liability that cannot legally be limited.
+11. Ending. These terms end if you break them. On ending, stop using the software on anything but the example project.
+12. Law. The law of England and Wales applies, and its courts decide any dispute.

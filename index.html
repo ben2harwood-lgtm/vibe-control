@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibe Control</title>
+<meta name="description" content="Let Claude Code change your code. Keep the last word.">
+<style>
+:root { --bg: #fbfaf7; --fg: #1d1d1b; --muted: #5d5b55; --line: #e3e0d8; --accent: #1f5f4a; --card: #ffffff; }
+@media (prefers-color-scheme: dark) { :root { --bg: #141412; --fg: #ecebe6; --muted: #a8a59c; --line: #2c2b27; --accent: #6cc3a0; --card: #1b1b18; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 12px; }
+h2 { font-size: 1.2rem; margin: 40px 0 8px; }
+p, li { color: var(--fg); }
+.lede { font-size: 1.15rem; color: var(--muted); }
+.price { font-weight: 600; margin: 20px 0; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 8px; }
+.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent); text-decoration: none; font-weight: 600; }
+.btn.primary { background: var(--accent); color: var(--bg); }
+.small { font-size: 0.85rem; color: var(--muted); word-break: break-all; }
+ol li, ul li { margin: 6px 0; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 0.9em; background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 1px 4px; }
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<h1>Let Claude Code change your code. Keep the last word.</h1>
+<p class="lede">Vibe Control is one command that makes Claude Code do a change the careful way: in a separate copy, with your tests run on the exact result, a second fresh review, and nothing touching your repository until you approve that exact result.</p>
+<p class="price">Free to try on the built-in example project. $49 once to use it on your own code.</p>
+<div class="buttons">
+  <a class="btn primary" href="vibe-control-0.1.0.zip">Download (macOS)</a>
+</div>
+<p class="small">Licence keys for your own code go on sale soon.</p>
+<p class="small">SHA-256: 4cb63cc439c02b3fcecfb6cf77cc60455eb1cd879791d419ed2e1fd43b1a5288 (<a href="vibe-control-0.1.0.zip.sha256">checksum file</a>)</p>
+
+<h2>What happens when you run it</h2>
+<ol>
+<li><strong>You say what you want</strong>, in a sentence or a file.</li>
+<li><strong>It shows you the plan</strong> and, if your tests already fail, tells you so before anything starts.</li>
+<li><strong>Claude Code builds it in a separate copy.</strong> It can read and edit files there and nothing else: no commands, no writing outside that copy.</li>
+<li><strong>The result is frozen.</strong> Every later step works on that exact result.</li>
+<li><strong>Your own tests run on the frozen result.</strong></li>
+<li><strong>A second, fresh Claude run reviews it</strong> with read-only tools and gives a plain verdict. It is the same model family, not an independent reviewer, and every screen says so.</li>
+<li><strong>You approve by typing a short code</strong> that names the exact result. No flag or setting can approve for you.</li>
+<li><strong>You get a new branch in your own repository</strong> and a receipt. Vibe Control never pushes anywhere; you push and open the pull request yourself.</li>
+</ol>
+<p>In our runs the whole thing took 20 to 50 seconds.</p>
+
+<h2>What it leaves alone</h2>
+<p>Your working files, your current branch, and anything untracked or ignored, such as <code>node_modules</code> and <code>.env</code> files. They are not copied, read or changed.</p>
+
+<h2>What it is not</h2>
+<ul>
+<li><strong>Not a security product.</strong> We make no protection promises.</li>
+<li><strong>Your tests are not sandboxed.</strong> They run on your machine as you, exactly as when you run them yourself, on code Claude wrote. Read the diff.</li>
+<li><strong>The reviewer is a second Claude session</strong>, not a different company's model.</li>
+<li><strong>A passing check does not prove your tests ran.</strong> Vibe Control fixes what your top-level <code>npm</code>, <code>yarn</code> or <code>pnpm</code> test script says before the change and stops if the change edits it. Scripts in another folder's <code>package.json</code> are not covered. A change can still alter how your tests behave in other ways: an <code>.npmrc</code> file, a test-runner settings file, the script your test command calls, or the test files themselves. It lists every changed file. Read that list before you approve.</li>
+<li><strong>Trust the last block on screen.</strong> The reviewer's words and your test output appear on marked lines. In a narrow window a very long line can wrap without its marker. The changed files, the test result, the verdict and the code to type are always printed last, right above the question.</li>
+</ul>
+
+<h2>What works today</h2>
+<ul>
+<li><strong>macOS with Claude Code</strong> installed and signed in with your own Claude subscription. Nothing else has been tried.</li>
+<li><strong>JavaScript and TypeScript projects</strong> with a <code>package.json</code>, up to 4 MB and 1,000 tracked files. Ignored folders such as <code>node_modules</code> do not count.</li>
+<li>Tests run in a clean copy, so if they need installed packages, include the install step in the check command.</li>
+</ul>
+
+<h2>What it costs</h2>
+<ul>
+<li><strong>Free</strong> on the example project that comes with it, for as long as you like.</li>
+<li><strong>$49, once,</strong> for a licence key that unlocks your own code. No subscription to us.</li>
+<li>You still pay Anthropic for Claude as you do now. Vibe Control uses your own Claude Code sign-in and never sees it.</li>
+</ul>
+
+<h2>What you need</h2>
+<p>A Mac, Claude Code installed and signed in, git, Node for JavaScript tests, and Python 3.11 or newer. Unzip the download, open a terminal in the folder, run <code>./vibe doctor</code>, then <code>./vibe demo</code>.</p>
+
+<h2>Fair questions</h2>
+<p><strong>Can I read the code?</strong> Yes. The download is plain source. The licence key is an honest-user gate, not copy protection. You type the key when asked; it is not shown and never goes on the command line.</p>
+<p><strong>Does it send my code anywhere?</strong> Vibe Control itself sends nothing except the licence-key check, which carries only the key. Claude Code talks to Anthropic as it always does.</p>
+<p><strong>What if I stop it half way?</strong> Ctrl-C, or closing the terminal window, stops the run, ends what it started and delivers nothing.</p>
+<p><strong>Who sells it?</strong> FRM SYSTEMS LTD, a company registered in England and Wales (number 17364736). <a href="LICENCE.txt">Licence terms</a>.</p>
+
+<footer>Vibe Control runs Claude Code. It is not made by or connected with Anthropic.</footer>
+</main>
+</body>
+</html>
